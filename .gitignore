@@ -1,0 +1,6 @@
+.idea/
+.vscode/
+emworktest/emwork-test/node_modules/*
+emworktest/emwork-test/dist/*
+.env
+.env*

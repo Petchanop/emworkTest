@@ -1,0 +1,42 @@
+services:
+  emworktest:
+    container_name: emworktest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_DATABASE: emworktestdb
+      MYSQL_USER: emwork
+      MYSQL_ROOT_PASSWORD: emworktest
+      MYSQL_PASSWORD: emworktest
+    volumes:
+      # Update this to wherever you want VS Code to mount the folder of your project
+      - ../..:/workspaces:cached
+    depends_on:
+      - emworkdb
+    network_mode: service:emworkdb
+    
+    command: sleep infinity
+
+  emworkdb:
+    container_name: emworktestdb
+    image: mysql:9
+    environment:
+      MYSQL_DATABASE: emworktestdb
+      MYSQL_USER: emwork
+      MYSQL_ROOT_PASSWORD: emworktest
+      MYSQL_PASSWORD: emworktest
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+    networks:
+      - emworknetwork
+
+volumes:
+  mysql_data:
+
+networks:
+  emworknetwork:
+    driver: bridge
