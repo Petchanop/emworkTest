@@ -9,7 +9,7 @@ async function bootstrap() {
     .setTitle('Emwork test')
     .setDescription('Emwork test API description')
     .setVersion('1.0')
-    .addTag('Task')
+    .addTag('Tasks')
     .build();
 
   const options: SwaggerDocumentOptions = {
