@@ -4,3 +4,6 @@ emworktest/emwork-test/node_modules/*
 emworktest/emwork-test/dist/*
 .env
 .env*
+
+emworktest/SecondTest/emwork2test/.next/*
+emworktest/SecondTest/emwork2test/node_modules/*

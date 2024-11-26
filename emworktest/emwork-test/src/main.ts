@@ -33,6 +33,6 @@ async function bootstrap() {
     jsonDocumentUrl: '/api/emwork_test_openapi.json',
     yamlDocumentUrl: '/api/emwork_test_openapi.yaml',
   });
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(process.env.PORT ?? 3333);
 }
 bootstrap();

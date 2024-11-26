@@ -2,8 +2,7 @@ import { DataSource } from "typeorm";
 import { Task } from "./task/entities/task.entity";
 
 export default () => ({
-  // port: parseInt(process.env.PORT) || 3000,
-  port: 8083,
+  port: 3333,
   database: {
     host: process.env.MYSQL_HOST,
     port: parseInt(process.env.MYSQL_PORT, 10) || 5432
